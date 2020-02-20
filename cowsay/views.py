@@ -29,7 +29,11 @@ def index(request):
         if form.is_valid():
             data = form.cleaned_data['text']
             form.save()
-
             return render(request, html, {'form': TextInput(), 'text': cowsay_helper(data)})
-            
     return render(request, html, {'form': TextInput()})
+
+
+def history(request):
+    html = 'history.html'
+    data = Cowsay.objects.all().order_by("-time")[:10]
+    return render(request, html, {'data': data})

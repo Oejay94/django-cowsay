@@ -19,6 +19,6 @@ from cowsay import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='home')
-    path('history/')
+    path('', views.index, name='home'),
+    path('history/', views.history, name='history')
 ]

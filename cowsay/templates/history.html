@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moo Cow's History</title>
+    </head>
+
+    <body>
+        <h1 style="text-align: center;">Last 10 Quotes</h1>
+        <br>
+        <div style="border: 2px solid black;">
+        {% for x in data %}
+        <ul style="text-align: center; list-style-position: inside">
+            <li>{{x.text}} | {{x.time}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    </body>
+
+</html>
